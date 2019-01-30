@@ -1,7 +1,10 @@
+import React from "react"
 import assert from "assert"
+import {shallow} from "enzyme"
+import Home from "../src/Home"
 
-describe('wiring test', () => {
-    it('should work', () => {
-      assert.equal([1,2,3].indexOf(4), -1);
+describe('Home', () => {
+    it('renders', () => {
+      const wrapper = shallow(<Home/>)
     });
 });
