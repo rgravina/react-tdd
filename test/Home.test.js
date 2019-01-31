@@ -6,7 +6,7 @@ import Home from "../src/Home"
 describe('Home', () => {
     it('shows the images in the feed', () => {
       const images = [
-        "https://images.dog.ceo/breeds/mix/Polo.jpg",
+        "https://images.dog.ceo/breeds/chow/n02112137_16109.jpg",
         "https://images.dog.ceo/breeds/akita/512px-Akita_inu.jpeg"
       ]
       const dogRepository = {
