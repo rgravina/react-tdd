@@ -1,13 +1,19 @@
 import React from "react"
-import assert from "assert"
 import expect from "expect"
 import {shallow} from "enzyme"
 import Home from "../src/Home"
 
 describe('Home', () => {
-    it('renders', () => {
-      const wrapper = shallow(<Home/>)
+    it('shows the images in the feed', () => {
+      const images = [
+        "https://images.dog.ceo/breeds/mix/Polo.jpg",
+        "https://images.dog.ceo/breeds/akita/512px-Akita_inu.jpeg"
+      ]
+      const dogRepository = {
+        getDogImages: () => images
+      }
+      const wrapper = shallow(<Home dogRepository={dogRepository}/>)
 
-      expect(wrapper.text()).toContain("Hello World")
+      expect(wrapper.find('img').length).toEqual(2)
     });
 });
