@@ -14,6 +14,9 @@ describe('Home', () => {
       }
       const wrapper = shallow(<Home dogRepository={dogRepository}/>)
 
-      expect(wrapper.find('img').length).toEqual(2)
+      const renderedImages = wrapper.find('img')
+      expect(renderedImages.length).toEqual(2)
+      expect(renderedImages.at(0).props().src).toEqual("https://images.dog.ceo/breeds/chow/n02112137_16109.jpg")
+      expect(renderedImages.at(1).props().src).toEqual("https://images.dog.ceo/breeds/akita/512px-Akita_inu.jpeg")
     });
 });
